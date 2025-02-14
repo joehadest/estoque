@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Estoque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <h1><i class="fas fa-boxes"></i> Sistema de Estoque</h1>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-plus-circle"></i> Adicionar/Editar Peça</h2>
+            </div>
+            <div class="card-body">
+                <form id="pecaForm">
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-barcode"></i>
+                            <input type="text" id="codigo" required placeholder="Código">
+                        </div>
+                        <div class="input-with-icon">
+                            <i class="fas fa-tag"></i>
+                            <input type="text" id="nome" required placeholder="Nome">
+                        </div>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calculator"></i>
+                            <input type="number" id="quantidade" required placeholder="Quantidade" min="0">
+                        </div>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="localizacao" placeholder="Localização">
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Salvar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-list"></i> Inventário</h2>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Pesquisar...">
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Quantidade</th>
+                                <th>Localização</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="inventoryBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div id="paginationInfo" class="pagination-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sistema de Estoque. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>
